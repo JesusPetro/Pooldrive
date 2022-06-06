@@ -1,0 +1,58 @@
+{% extends "Base.html" %}
+
+{% block Page %}
+
+
+
+<main class="form-signin w-25 position-absolute top-50 start-50 translate-middle text-center">
+
+   <!-- mensajes de verificacion  -->      
+   {% with messages = get_flashed_messages()  %}
+   {% if messages %}
+     {% for message in messages %}
+          {% if mensaje_error==1 %}
+           <div class="alert alert-danger alert-dismissible fade show" role="alert">
+             {{ message }}
+             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+           </div>
+           {% endif %}
+           {% if mensaje_error==0 %}
+           <div class="alert alert-success alert-dismissible fade show" role="alert">
+             {{ message }}
+             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+           </div>
+           {% endif %}
+     {% endfor %}
+   {% endif %}
+{% endwith %}
+
+    <form class="px-3" action="/usu" method="post">
+      <img class="mb-4" src="{{url_for('static', filename='image/user.png')}}" alt="" width="30%" height="30%">
+      <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+      <div class="form-floating">
+        <input type="email" class="form-control" name = "email" id="floatingInput" placeholder="name@example.com" required/>
+        <label for="floatingInput">Email address</label>
+      </div>
+      <div class="form-floating">
+        <input type="password" name ="password" class="form-control" id="floatingPassword" placeholder="Password" required/>
+        <label for="floatingPassword">Password</label>
+      </div>
+
+      <div class="checkbox mb-3 my-2">
+        <label>
+          <input class="form-check-input" type="checkbox" value="remember-me"> Remember me
+          <p class="small"><b>*no funcional*</b></p>
+        </label>
+      </div>
+
+
+
+      <button class="w-100 btn btn-dark" type="submit">Sign in</button>
+      <button class="w-100 btn btn-light "><a href="/" class="text-decoration-none text-dark">Regresar</a></button>
+      <p class="small"> ¿no tiene cuenta? <a href="/register" class="text-decoration-none">Registrate</a> </p>
+    </form>
+  </main>
+
+
+{% endblock %}

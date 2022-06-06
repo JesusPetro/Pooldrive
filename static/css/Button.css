@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100&display=swap');
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins',sans-serif;
+}
+:root{
+	--clr: #222327;
+	--bs-body-font-family: 'Poppins',sans-serif;
+}
+
+@media screen and (max-width:  1920px){
+	#imagen{
+	padding: 1px;
+	background-image:url(https://img.freepik.com/vector-gratis/gente-dentro-coche-conductor-pasajero-viajan-carretera-ciudad-mujer-conduciendo-auto-carretera-navegador-personajes-dibujos-animados-vector-plano-vista-posterior-paisaje-ciudad_176411-2022.jpg?w=2000);
+	background-size: cover;
+	background-repeat: no-repeat;
+	margin: 0 auto;
+	width: auto;
+	height: auto;
+	}
+}
+@media screen and (max-width:  1920px){
+	#imagenusu{
+	padding: 1px;
+	background-image:url(https://www.androidpolice.com/wp-content/uploads/2020/06/22/Dark-Mode-maps-in-Google-App-hero.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	margin: 0 auto;
+	width: auto;
+	height: auto;
+	}
+}
+#prueba{
+	padding: 10px;
+	margin-left: 50px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	width: 600px;
+	height: 505px;
+}
+

@@ -1,0 +1,128 @@
+{% extends "Base.html" %}
+
+{% block Page %}
+
+<header class="p-3 bg-dark text-white">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+        </a>
+        <a href="/"  class="position-absolute start-0 top-0">
+            <img src="{{url_for('static', filename='image/Pooldrive-white.png')}}" alt="NO SE QUE ES ESTO" height="50px"  >
+        </a>
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li style="padding-left: 50px;"><a href="/" class="nav-link px-2 text-white">Home</a></li>
+          <li>
+            <div class="dropdown">
+              <button class="btn btn-link text-white text-decoration-none dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                  Compañia
+               </button>
+
+               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                   <li><a class="dropdown-item" href="/Information#Quienes_Somos">¿Quienes somos?</a></li>
+                   <li><a class="dropdown-item" href="/Information#Que_Ofrecemos">¿Que ofrecemos?</a></li>
+                   <li><a class="dropdown-item" href="/Information#Como_Funciona">¿Cómo Funciona?</a></li>
+                   <li ><a href="/Information#Ayuda" class="dropdown-item">Ayuda</a></li>
+                 </ul>
+            </div>
+          </li>
+          
+        </ul>
+
+        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+          <input type="search" class="form-control form-control-dark text-white bg-dark" placeholder="No funciona..." aria-label="Search">
+        </form>
+
+        <div class="text-end">
+            <div class="dropdown">
+                <button class="btn btn-link dropdown-toggle text-decoration-none text-white" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                  {{nombre}}
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                  <li><a class="dropdown-item" href="#">Aqui va una accion</a></li>
+                  <li><a class="dropdown-item" href="#">Aqui va una accion</a></li>
+                  <li><a class="dropdown-item" href="/">Cerrar Sesion</a></li>
+                </ul>
+              </div>
+        </div>
+      </div>
+    </div>
+</header>
+
+<div id ="imagenusu">
+    <div class="card col-xl-5 px-5 py-5" id ="prueba">
+        <div class="row align-items-center g-lg-1 py-1">
+          <div class=" text-center text-lg-start">
+              
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active text-dark" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true"> 
+                    <ion-icon name="car-outline"></ion-icon><br/> Viaja
+                </button>
+                </li>
+              </ul>
+          
+              <!-- Aca coloco ediciones de la página -->
+              <div class="tab-content" id="myTabContent">
+                {%if aux == 0 %}
+                <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                  <h4 class="display-6 fw-bold lh-1 mb-3 py-3" id="nose">Pide un viaje ahora</h4>
+                  <form action="/usu" method="post">
+                      <div class="input-group mb-3">
+                          <span class="input-group-text" id="basic-addon1"><i class="bi bi-circle"></i></span>
+                          <input name = "partida" type="text" class="form-control" placeholder="Ingresa punto de partida" aria-label="Ingresa el punto de partida" aria-describedby="basic-addon1" required>
+                      </div>
+
+                      <div class="input-group mb-3">
+                          <span class="input-group-text" id="basic-addon1"><i class="bi bi-square"></i></span>
+                          <input name = "destino" type="text" class="form-control" placeholder="Ingresa un destino" aria-label="Ingresa un destino" aria-describedby="basic-addon1" required>
+                      </div>
+                  </div>
+                    <input type="text" name="email" value= "{{correo}}" style="opacity: 0;">
+                    <input type="text" name ="password" value ="{{contra}}" style="opacity: 0;">
+                  <div class="py-5">
+                      <button type="submit" name ="id" value="1" class="btn btn-dark">Pedir ahora</button>
+                  </div>
+                </form>
+                {% endif %}
+
+                {%if aux == 1 %}
+
+                <div class="row py-5">
+                  <div class="col-sm">
+                    <h6>Partida: </h6>
+                    <p>{{partida}}</p>
+                  </div>
+
+                  <div class="col-sm">
+                    <h6>Destino: </h6>
+                    <p>{{destino}}</p>
+                  </div>
+                    <div class="col sm">
+                      <form action="/usu" method="post">
+                        <button class="btn btn-danger m-0" type="submit">Cancelar</button>
+                        <input type="text" name="email" value= "{{correo}}" style="opacity: 0;">
+                        <input type="text" name ="password" value ="{{contra}}" style="opacity: 0;">
+                        <input type="text" name = "partida2" value = "{{partida}}" style = "opacity: 0; ">
+                        <input type="text" name = "destino2" value = "{{destino}}" style = "opacity: 0;">
+                        <input type="text" name = "iden" value = "{{iden}}" style="opacity: 0;">
+                      </form>
+                    </div>
+                </div>
+
+
+                
+                  {% endif %}
+                
+
+                      
+
+                </div>
+              </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

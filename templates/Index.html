@@ -1,0 +1,142 @@
+{% extends "Base.html" %}
+
+{% block Page %}
+    <header class="p-3 bg-dark text-white">
+        <div class="container">
+          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+              <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+            </a>
+            <a href="/"  class="position-absolute start-0 top-0">
+                <img src="{{url_for('static', filename='image/Pooldrive-white.png')}}" alt="NO SE QUE ES ESTO" height="50px"  >
+            </a>
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+              <li style="padding-left: 50px;"><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
+              <li>
+                <div class="dropdown">
+                  <button class="btn btn-link text-white text-decoration-none dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                      Compañia
+                   </button>
+   
+                   <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                       <li><a class="dropdown-item" href="/Information#Quienes_Somos">¿Quienes somos?</a></li>
+                       <li><a class="dropdown-item" href="/Information#Que_Ofrecemos">¿Que ofrecemos?</a></li>
+                       <li><a class="dropdown-item" href="/Information#Como_Funciona">¿Cómo Funciona?</a></li>
+                       <li ><a href="/Information#Ayuda" class="dropdown-item">Ayuda</a></li>
+                     </ul>
+                </div>
+              </li>
+              
+            </ul>
+    
+            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+              <input type="search" class="form-control form-control-dark text-white bg-dark" placeholder="No funciona..." aria-label="Search">
+            </form>
+    
+            <div class="text-end">
+                <div class="btn-group">
+                    <button class="btn btn-outline-light" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        Loguin
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="/login/chofer">Sesion para conducir o pedidos </a></li>
+                        <li><a class="dropdown-item" href="/login">Sesion para viajar</a></li>
+                    </ul>
+                  </div>
+                  <div class="btn-group">
+                    <button class="btn btn-warning " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        Sign-up
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="/register2">Registro para conductores</a></li>
+                        <li><a class="dropdown-item" href="/register">Registro para usuarios</a></li>
+                    </ul>
+                  </div>
+               
+            </div>
+          </div>
+        </div>
+    </header>
+
+	<div id ="imagen">
+        <div class="card col-xl-5 px-5 py-5" id ="prueba">
+            <div class="row align-items-center g-lg-1 py-1">
+              <div class=" text-center text-lg-start">
+                  
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link active text-dark" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true" onclick="conduce()"> <i class="bi bi-reception-4"></i><br/> Conduce </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link  text-dark" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false" onclick="comida()"><ion-icon name="fast-food-outline"></ion-icon> <br/>Food</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link  text-dark" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false" onclick="viaja()"><ion-icon name="car-outline"></ion-icon><br/> Viaja</button>
+                    </li>
+
+                  </ul>
+              
+                  <!-- Aca coloco ediciones de la página -->
+                  <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                        <h4 class="display-5 fw-bold lh-1 mb-3 py-2" id="nose">Ponte al volante y genera ganancias</h4>
+                        <p>¿Quieres ganar dinero extra? No pienses mas y ponte al volante</p>
+                        
+                        <div class="py-5">
+                            <button type="button" class="btn btn-dark"><a href="/register2" class="text-decoration-none text-white">Registrate para conducir</a></button>
+                        </div>
+
+                        <p class="small"><b>esta página está basada en <a href="https://www.uber.com/co/es/">uber</a>. Gran parte de los diseños no son de mi autoria</b></p>
+                    </div>
+
+                    <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                        <h4 class="display-6 fw-bold lh-1 mb-3 py-3" id="nose">Descubre comidas</h4>
+                        <p>Haz pedidos a domicilio de los restaurantes que te gusten</p>
+
+                        <div class="py-5">
+                            <button type="button" class="btn btn-dark">Haz tu pedido ahora  (no funcional)</button>
+                        </div>
+                        <a href="#" class="py-5 text-dark">Asociate con nosotros (no funcional)</a>
+                    </div>
+                    
+                    <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+                        <h4 class="display-6 fw-bold lh-1 mb-3 py-3" id="nose">Pide un viaje ahora</h4>
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"><i class="bi bi-circle"></i></span>
+                            <input type="text" class="form-control" placeholder="Ingresa punto de partida" aria-label="Ingresa el punto de partida" aria-describedby="basic-addon1">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"><i class="bi bi-square"></i></span>
+                            <input type="text" class="form-control" placeholder="Ingresa un destino" aria-label="Ingresa un destino" aria-describedby="basic-addon1">
+                        </div>
+
+                        <div class="py-5">
+                          <button type="button" class="btn btn-dark"><a href="/login" class="text-decoration-none text-white">Pedir ahora</a></button>
+                      </div>
+
+                    </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function conduce(){
+          var img = document.getElementById('imagen');
+          img.style.backgroundImage = "url('https://img.freepik.com/vector-gratis/gente-dentro-coche-conductor-pasajero-viajan-carretera-ciudad-mujer-conduciendo-auto-carretera-navegador-personajes-dibujos-animados-vector-plano-vista-posterior-paisaje-ciudad_176411-2022.jpg?w=2000')";
+        }
+
+        function comida(){
+          var img = document.getElementById('imagen');
+          img.style.backgroundImage = "url('https://st3.depositphotos.com/12731704/18035/i/600/depositphotos_180353038-stock-photo-group-of-young-friends-eating.jpg')";
+        }
+
+        function viaja (){
+          var img = document.getElementById('imagen');
+          img.style.backgroundImage = "url('https://www.androidpolice.com/wp-content/uploads/2020/06/22/Dark-Mode-maps-in-Google-App-hero.png')";
+        }
+    </script>
+{% endblock %}

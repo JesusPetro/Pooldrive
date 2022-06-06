@@ -1,0 +1,114 @@
+{% extends "Base.html" %}
+
+{% block Page %}
+
+<header class="p-3 bg-dark text-white">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+        </a>
+        <a href="/"  class="position-absolute start-0 top-0">
+            <img src="{{url_for('static', filename='image/Pooldrive-white.png')}}" alt="" height="50px"  >
+        </a>
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li style="padding-left: 50px;"><a href="/" class="nav-link px-2 text-white">Home</a></li>
+          <li>
+            <div class="dropdown">
+              <button class="btn btn-link text-secondary text-decoration-none dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                  Compañia
+               </button>
+
+               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                   <li><a class="dropdown-item" href="#Quienes_Somos">¿Quienes somos?</a></li>
+                   <li><a class="dropdown-item" href="#Que_Ofrecemos">¿Que ofrecemos?</a></li>
+                   <li><a class="dropdown-item" href="#Como_Funciona">¿Cómo Funciona?</a></li>
+                   <li ><a href="#Ayuda" class="dropdown-item">Ayuda</a></li>
+                 </ul>
+            </div>
+          </li>
+          
+        </ul>
+
+        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+          <input type="search" class="form-control form-control-dark text-white bg-dark" placeholder="No funciona..." aria-label="Search">
+        </form>
+
+        <div class="text-end">
+            <div class="btn-group">
+                <button class="btn btn-outline-light" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    Loguin
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" href="/login/chofer">Sesion para conducir o pedidos </a></li>
+                    <li><a class="dropdown-item" href="/login">Sesion para viajar</a></li>
+                </ul>
+              </div>
+              <div class="btn-group">
+                <button class="btn btn-warning " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    Sign-up
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" href="/register2">Registro para conductores</a></li>
+                    <li><a class="dropdown-item" href="/register">Registro para usuarios</a></li>
+                </ul>
+              </div>
+           
+        </div>
+      </div>
+    </div>
+</header>
+
+<section id="Quienes_Somos">
+    <div class="px-4 py-5 my-5 text-center">
+        <h1 class="display-5 fw-bold">¿Quienes somos?</h1>
+        <div class="col-lg-6 mx-auto">
+            <p class="lead mb-4">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque eum est earum adipisci consequatur similique, magni et commodi, veritatis sequi facilis quam excepturi alias aliquam laudantium, voluptatem maiores eos doloribus?
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est quos, error ut sed, laborum dicta pariatur repellendus iure recusandae quo ullam voluptate velit architecto nam ducimus, ratione tempore consectetur tenetur?
+            </p>
+
+        </div>
+      </div>
+</section>
+
+
+<section id="Que_Ofrecemos" >
+    <div class="px-4 py-5 my-5 text-center">
+        <h1 class="display-5 fw-bold">¿Qué ofrecemos?</h1>
+        <div class="col-lg-6 mx-auto">
+          <p class="lead mb-4">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque eum est earum adipisci consequatur similique, magni et commodi, veritatis sequi facilis quam excepturi alias aliquam laudantium, voluptatem maiores eos doloribus?
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est quos, error ut sed, laborum dicta pariatur repellendus iure recusandae quo ullam voluptate velit architecto nam ducimus, ratione tempore consectetur tenetur?
+          </p>
+        </div>
+      </div>
+</section>
+
+
+<section id="Como_Funciona">
+    <div class="px-4 py-5 my-5 text-center">
+        <h1 class="display-5 fw-bold">¿Cómo funciona?</h1>
+        <div class="col-lg-6 mx-auto">
+          <p class="lead mb-4">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque eum est earum adipisci consequatur similique, magni et commodi, veritatis sequi facilis quam excepturi alias aliquam laudantium, voluptatem maiores eos doloribus?
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est quos, error ut sed, laborum dicta pariatur repellendus iure recusandae quo ullam voluptate velit architecto nam ducimus, ratione tempore consectetur tenetur?
+          </p>
+        </div>
+      </div>
+</section>
+
+<section id="Ayuda">
+    <div class="px-4 py-5 my-5 text-center">
+        <h1 class="display-5 fw-bold">Ayuda (momentáneo)</h1>
+        <div class="col-lg-6 mx-auto">
+          <p class="lead mb-4">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque eum est earum adipisci consequatur similique, magni et commodi, veritatis sequi facilis quam excepturi alias aliquam laudantium, voluptatem maiores eos doloribus?
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est quos, error ut sed, laborum dicta pariatur repellendus iure recusandae quo ullam voluptate velit architecto nam ducimus, ratione tempore consectetur tenetur?
+          </p>
+        </div>
+      </div>
+</section>
+
+
+{% endblock %}

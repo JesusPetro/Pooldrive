@@ -1,0 +1,87 @@
+{% extends "Base.html" %}
+
+{% block Page %}
+<script>
+    function Registro1() {
+  const [state, setstate] = useState(false);
+
+  const toggleBtn = () => {
+    setstate(prevState => !prevState);
+  }
+}
+
+</script>
+    <div class="form-signin w-25 position-absolute top-50 start-50 translate-middle text-center" tabindex="-1" role="dialog" id="modalSheet">
+      <!-- mensajes de verificacion  -->      
+   {% with messages = get_flashed_messages()  %}
+   {% if messages %}
+     {% for message in messages %}
+          {% if mensaje_error==1 %}
+           <div class="alert alert-danger alert-dismissible fade show" role="alert">
+             {{ message }}
+             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+           </div>
+           {% endif %}
+           {% if mensaje_error==0 %}
+           <div class="alert alert-success alert-dismissible fade show" role="alert">
+             {{ message }}
+             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+           </div>
+           {% endif %}
+     {% endfor %}
+   {% endif %}
+{% endwith %}
+
+                    <img src="{{url_for('static', filename='image/Pooldrive.png')}}" alt="a">
+                    <h5 class="py-3" style="font-family: 'Quicksand', sans-serif;">Registrate en pooldrive <br/> y únete a esta experiencia</h5>
+                    <form action="/add_person" method="post">
+                        <div class="row">
+                            <div class="col-sm">
+                              <div class="form-floating mb-3">
+                                <input type="text" class="form-control rounded-2" name="nombre" placeholder='nombre' required />
+                                <label for="floatingInput">nombre</label>
+                              </div>
+                            </div>
+          
+                            <div class="col-sm">
+                              <div class="form-floating mb-3">
+                                <input type="text" class="form-control rounded-2" name="apellido"  placeholder='apellido' required />
+                                <label for="floatingInput">apellido</label>
+                              </div>
+                            </div>
+                        </div>
+          
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control rounded-2" name="email" id="floatingInput"  placeholder='name@example.com' required />
+                            <label for="floatingInput"> E-mail </label>
+                        </div>
+          
+                        <div class="col-sm">
+                            <div class="form-floating mb-3">
+                                <input type = "password" class="form-control rounded-2" name="contraseña" placeholder='password' required />
+                                <label for="floatingInput">Contraseña</label>
+                            </div>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control rounded-2" name="phoneNumber" id= "phoneNumber" placeholder='phoneNumber' required />
+                            <label for="floatingInput">Numero de Telefono</label>
+                        </div>
+                            
+                        <div class="row">
+                            <div class="col-sm">
+                                <div class="modal-footer flex-column border-top-0">
+                                    <button class="w-100 mb-2  rounded-4  btn btn-link text-decoration-none " ><a href="/login" class="text-decoration-none text-dark">Prefiero iniciar sesion</a></button>
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <div class="modal-footer flex-column border-top-0">
+                                    <button class="w-100 mb-2 btn rounded-4 btn-dark" type="submit">Registrar</button>
+                                </div>
+                            </div>
+                        </div>         
+                </form>
+        </div>
+
+
+{% endblock %}
